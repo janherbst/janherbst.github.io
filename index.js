@@ -60,17 +60,17 @@ function stopQR(){
 
 function moveScene(i){
     if(i == Images.INTERVENTION){
-        changeImage("images/intervention.png", "#intervention");
+        changeImage("intervention.png", "#intervention");
         startQR();
     }else if(i == Images.MENU){
-        changeImage("images/menu.png", "#menu");
+        changeImage("menu.png", "#menu");
     }else if (i == Images.OVERWRITTEN){
-        changeImage("images/overwritten.png", "#overwritten");
+        changeImage("overwritten.png", "#overwritten");
         setTimeout(function(){ moveScene(Images.START); } , 5000);
     }else if(i == Images.START){
-        changeImage("images/start.png", "#lessons");
+        changeImage("start.png", "#lessons");
     }else if(i == Images.VERIFIED){
-        changeImage("images/verified.png", "#verified");
+        changeImage("verified.png", "#verified");
         setTimeout(function(){ moveScene(Images.START); } , 5000);
     }
 }
