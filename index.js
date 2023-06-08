@@ -22,6 +22,8 @@ function changeImage(newImage, newMap){
 function tick(){
     canvasElement.height = 360;
     canvasElement.width = 480;
+    canvas.translate(480, 0);
+    canvas.scale(-1, 1);
     canvas.drawImage(video, 0, 0, canvasElement.width, canvasElement.height);
   
     scanning && requestAnimationFrame(tick);
