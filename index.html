@@ -1,0 +1,39 @@
+<head> 
+</head>
+<body>
+    <img id="mainimage" src ="images/start.png" alt = "usemap" usemap = "#lessons"/>
+    
+    <!-- MAPS -->
+    <map name = "lessons" id="startmap">
+        <area onclick="onPayClick()"  shape = "rect" coords = "1436,1388,1971,1515" alt = "HTML Tutorial"
+            target = "_blank" />
+    </map>
+    <map name="intervention">
+
+    </map>
+
+    <map name="menu">
+        <area onclick="onExitClick()"  shape = "rect" coords = "164,1338,727,1498" alt = "HTML Tutorial"
+            target = "_blank" />
+    </map>
+
+    <map name="verified">
+
+    </map>
+
+
+    <map name="overwritten">
+
+    </map>
+    <!-- MAPS -->
+
+    <canvas style="position: absolute; top:500; left:278;" hidden="" id="qr-canvas"></canvas>
+
+    <div id="qr-result" hidden="">
+        <b>Data:</b> <span id="outputData"></span>
+    </div>
+
+
+    <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js"></script>
+    <script src="index.js"></script>
+</body>
