@@ -11,6 +11,7 @@ const qrResult = document.getElementById("qr-result");
 const outputData = document.getElementById("outputData");
 const canvasElement = document.getElementById("qr-canvas");
 const canvas = canvasElement.getContext("2d");
+const overlay = document.getElementById("canvas-overlay");
 
 var scanning=false;
 
@@ -45,6 +46,7 @@ function startQR(){
         video.srcObject = stream;
         video.play();
         canvasElement.hidden = false;
+        overlay.hidden = false;
 
         tick();
         scan();
@@ -57,7 +59,7 @@ function stopQR(){
     video.srcObject.getTracks().forEach(track => {
         track.stop();
       });
-      
+      overlay.hidden = true;
 }
 
 function moveScene(i){
