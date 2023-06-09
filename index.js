@@ -102,14 +102,14 @@ qrcode.callback = (res) => {
         console.log("QR Found!")
         console.log(res)
         if(res == "GOTOVERIFIED"){
-            moveScene(Images.VERIFIED);
             audioVerification.play();
+            moveScene(Images.VERIFIED);
         }else if (res == "GOTOOVERWRITTEN"){
-            moveScene(Images.OVERWRITTEN);
             audioApproval.play();
+            moveScene(Images.OVERWRITTEN);
         }else if (res == "GOTOMENU"){
-            moveScene(Images.MENU);
             audioAction.play();
+            moveScene(Images.MENU);
         }
         stopQR();
     }
