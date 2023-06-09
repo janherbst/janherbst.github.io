@@ -16,6 +16,7 @@ const overlay = document.getElementById("canvas-overlay");
 const audioVerification = new Audio("verification.mp3");
 const audioApproval = new Audio("approval.mp3");
 const audioAction = new Audio("action.mp3");
+const audioWait = new Audio("wait.mp3");
 
 var scanning=false;
 
@@ -85,6 +86,7 @@ function moveScene(i){
 
 function onPayClick(event){
     moveScene(Images.INTERVENTION);
+    audioWait.play();
 }
 
 function onExitClick(event){
