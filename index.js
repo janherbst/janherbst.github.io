@@ -15,7 +15,6 @@ const overlay = document.getElementById("canvas-overlay");
 
 const audioVerification = new Audio("verification.mp3");
 const audioApproval = new Audio("approval.mp3");
-const audioAction = new Audio("action.mp3");
 const audioWait = new Audio("wait.mp3");
 
 var scanning=false;
@@ -109,7 +108,7 @@ qrcode.callback = (res) => {
             audioApproval.play();
         }else if (res == "GOTOMENU"){
             moveScene(Images.MENU);
-            audioAction.play();
+
         }
         stopQR();
     }
