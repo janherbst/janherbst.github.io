@@ -86,6 +86,7 @@ function moveScene(i){
 
 function onPayClick(event){
     moveScene(Images.INTERVENTION);
+    audioAction.play();
 }
 
 function onExitClick(event){
