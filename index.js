@@ -16,7 +16,8 @@ const overlay = document.getElementById("canvas-overlay");
 const audioVerification = new Audio("verification.mp3");
 const audioApproval = new Audio("approval.mp3");
 const audioWait = new Audio("wait.mp3");
-const audioAction = new Audio("action.mp3");
+const audioOn = new Audio("supervisoron.mp3");
+const audioOff = new Audio("supervisoroff.mp3");
 
 var scanning=false;
 
@@ -90,12 +91,13 @@ function onPayClick(event){
    
     audioVerification.load();
     audioApproval.load();
-    audioAction.load();
+    audioOn.load();
 
 }
 
 function onExitClick(event){
     moveScene(Images.START);
+    audioOff.play();
 }
 
 // "GOTOVERIFIED"
@@ -108,16 +110,13 @@ qrcode.callback = (res) => {
         console.log(res)
         if(res == "GOTOVERIFIED"){
             moveScene(Images.VERIFIED);
-            //audioVerification.defaultMuted = false;
             audioVerification.play();
         }else if (res == "GOTOOVERWRITTEN"){
             moveScene(Images.OVERWRITTEN);
-            //audioApproval.defaultMuted = false;
             audioApproval.play();
         }else if (res == "GOTOMENU"){
             moveScene(Images.MENU);
-            //audioAction.defaultMuted = false;
-            audioAction.play();
+            audioOn.play();
         }
         stopQR();
     }
