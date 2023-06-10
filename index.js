@@ -88,16 +88,12 @@ function onPayClick(event){
     moveScene(Images.INTERVENTION);
     audioWait.play();
     
-    audioVerification.preload = "auto";
-    audioApproval.preload = "auto";
-    audioAction.preload = "auto";  
-    
-   //audioVerification.volume = 0;
-   //audioVerification.play();
-   //audioApproval.volume = 0;
-   //audioApproval.play();
-   //audioAction.volume = 0;
-   //audioAction.play();
+    audioVerification.defaultMuted = true;
+    audioVerification.play();
+    audioApproval.defaultMuted = true;
+    audioApproval.play();
+    audioAction.defaultMuted = true;
+    audioAction.play();
 
 }
 
@@ -115,15 +111,15 @@ qrcode.callback = (res) => {
         console.log(res)
         if(res == "GOTOVERIFIED"){
             moveScene(Images.VERIFIED);
-            audioVerification.volume = 1;
+            audioVerification.defaultMuted = false;
             audioVerification.play();
         }else if (res == "GOTOOVERWRITTEN"){
             moveScene(Images.OVERWRITTEN);
-            audioApproval.volume = 1;
+            audioApproval.defaultMuted = false;
             audioApproval.play();
         }else if (res == "GOTOMENU"){
             moveScene(Images.MENU);
-            audioAction.volume = 1;
+            audioAction.defaultMuted = false;
             audioAction.play();
         }
         stopQR();
