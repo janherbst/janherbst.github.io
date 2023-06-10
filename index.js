@@ -87,16 +87,10 @@ function moveScene(i){
 function onPayClick(event){
     moveScene(Images.INTERVENTION);
     audioWait.play();
-    
-    //audioVerification.defaultMuted = true;
-    audioVerification.play();
-    audioVerification.pause();
-    //audioApproval.defaultMuted = true;
-    audioApproval.play();
-    audioApproval.pause();
-    //audioAction.defaultMuted = true;
-    audioAction.play();
-    audioAction.pause();
+   
+    audioVerification.load();
+    audioApproval.load();
+    audioAction.load();
 
 }
 
