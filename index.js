@@ -88,12 +88,13 @@ function onPayClick(event){
     moveScene(Images.INTERVENTION);
     audioWait.play();
     
-   audioVerification.play();
    audioVerification.volume = 0;
-   audioApproval.play();
+   audioVerification.play();
    audioApproval.volume = 0;
-   audioAction.play();
+   audioApproval.play();
    audioAction.volume = 0;
+   audioAction.play();
+
 }
 
 function onExitClick(event){
