@@ -94,9 +94,6 @@ function onPayClick(event){
     audioVerification.play();
     audioApproval.play();
     audioAction.play();
-    audioVerification.volume = 1;
-    audioApproval.volume = 1;
-    audioAction.volume = 1;
 }
 
 function onExitClick(event){
@@ -113,12 +110,15 @@ qrcode.callback = (res) => {
         console.log(res)
         if(res == "GOTOVERIFIED"){
             moveScene(Images.VERIFIED);
+            audioVerification.volume = 1;
             audioVerification.play();
         }else if (res == "GOTOOVERWRITTEN"){
             moveScene(Images.OVERWRITTEN);
+            audioApproval.volume = 1;
             audioApproval.play();
         }else if (res == "GOTOMENU"){
             moveScene(Images.MENU);
+            audioAction.volume = 1;
             audioAction.play();
         }
         stopQR();
