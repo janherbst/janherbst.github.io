@@ -88,9 +88,9 @@ function onPayClick(event){
     moveScene(Images.INTERVENTION);
     audioWait.play();
     
-    audioVerification.volume = 0;
-    audioApproval.volume = 0;
-    audioAction.volume = 0;
+    audioVerification.volume = 0.0;
+    audioApproval.volume = 0.0;
+    audioAction.volume = 0.0;
     audioVerification.play();
     audioApproval.play();
     audioAction.play();
