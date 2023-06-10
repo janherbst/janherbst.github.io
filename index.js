@@ -88,12 +88,16 @@ function onPayClick(event){
     moveScene(Images.INTERVENTION);
     audioWait.play();
     
-    audioVerification.play();
-    audioVerification.volume = 0;
-    audioApproval.play();
-    audioApproval.volume = 0;
-    audioAction.play();
-    audioAction.volume = 0;
+   audioVerification.load();
+   audioApproval.load();
+   audioAction.load();
+    
+   // audioVerification.play();
+   // audioVerification.volume = 0;
+   // audioApproval.play();
+   // audioApproval.volume = 0;
+   // audioAction.play();
+   // audioAction.volume = 0;
 }
 
 function onExitClick(event){
